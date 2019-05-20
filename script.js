@@ -18,3 +18,11 @@ let onHamburgerClick = function() {
 hamburgerMenu.addEventListener("click", onHamburgerClick);
 
 
+// Fonctionnalité 3 : Cliquer sur le bouton edit de la 1ère card >>> texte de la card en rouge (irréversible)
+
+let firstEditButton = document.querySelectorAll('.btn-group')[0].children[1];
+let onFirstEditClick = function() { 
+  firstEditButton.style.color ="red";
+};
+firstEditButton.addEventListener("click", onFirstEditClick);
+
