@@ -7,3 +7,14 @@ let onFooterClick = function() {
   i++
 }
 footerClicker.addEventListener("click", onFooterClick)
+
+// Fonctionnalité 2 : Cliquer sur le Hamburger menu >>> alternance destruction/ajout de la class collapse de la navbar
+
+let hamburgerMenu = document.querySelector(".navbar-toggler");
+let navbarHeader = document.getElementById("navbarHeader");
+let onHamburgerClick = function() {
+		navbarHeader.classList.toggle("collapse");
+};
+hamburgerMenu.addEventListener("click", onHamburgerClick);
+
+
