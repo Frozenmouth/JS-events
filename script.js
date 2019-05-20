@@ -26,3 +26,18 @@ let onFirstEditClick = function() {
 };
 firstEditButton.addEventListener("click", onFirstEditClick);
 
+// Fonctionnalité 4 : Cliquer sur le bouton edit de la 1ère card >>> texte de la card en vert (réversible par click)
+
+let secondEditButton = document.querySelectorAll('.btn-group')[1].children[1];
+let secondEditButtonStatus = false
+let onSecondEditClick = function() {
+	if (secondEditButtonStatus === false) {
+	  secondEditButton.style.color ="green";
+	  secondEditButtonStatus = true
+  }
+	else if (secondEditButtonStatus === true) {
+	  secondEditButton.style.color ="";
+	  secondEditButtonStatus = false
+  }  
+};
+secondEditButton.addEventListener("click", onSecondEditClick);
