@@ -59,4 +59,42 @@ let onNavBarDoubleClick = function() {
 }	
 navbarDoubleClicker.addEventListener("dblclick", onNavBarDoubleClick)
 
+// Fonctionnalité 6 : Passer sa souris sur le bouton "View" d'une card >>> réduction card (disparition texte, image 20%, boutons restent visibles) (réversible par repassage)
+	
+let card = document.querySelectorAll(".card");
+let cardView = document.querySelectorAll(".btn-group");
 
+for (let a = 0; a < card.length; a++) {
+  
+  let onCardsMouseMove = function() {	
+	  let imgCard = card[a].querySelector('.card-img-top')
+	  let textCard = card[a].querySelector('.card-text')
+	    
+	    if (textCard.style.display === "none") {
+        textCard.style.display = "block";
+        imgCard.style.width = "100%";
+      } 
+      else {
+        textCard.style.display = "none";
+        imgCard.style.width = "20%";
+      }
+  } 
+  cardView[a].children[0].addEventListener('mouseover', onCardsMouseMove)
+}
+
+
+// Fonctionnalités 7&8 : Cliquer sur le bouton ==> gris >>> la dernière carte passe en première (et inversement pour bouton <== bleu)
+
+let forwardButton = document.querySelectorAll(".my-2")[1]
+let backwardButton = document.querySelectorAll(".my-2")[0]	
+let cardRow = document.querySelectorAll("div.row")[1]	
+
+let onFowardButtonClick = function() {
+  cardRow.insertBefore(cardRow.lastChild, cardRow.firstChild)
+}
+let onBackwardButtonClick = function(e) {
+  e.preventDefault();
+  cardRow.insertBefore(cardRow.firstChild, cardRow.lastChild)
+}
+forwardButton.addEventListener('click', onFowardButtonClick)
+backwardButton.addEventListener('click', onBackwardButtonClick)
