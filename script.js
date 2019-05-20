@@ -41,3 +41,22 @@ let onSecondEditClick = function() {
   }  
 };
 secondEditButton.addEventListener("click", onSecondEditClick);
+
+// Fonctionnalité 5 : Double-cliquer sur la navbar >>> tout bootstrap disparaît (réversible par double click)
+
+let navbarDoubleClicker = document.querySelector("header")
+let styleLink = document.querySelector("link")
+let styleLinkStatus = false
+let onNavBarDoubleClick = function() {
+  if (styleLinkStatus === false) {
+    styleLink.setAttribute("href", "#");
+    styleLinkStatus = true
+  }
+  else if (styleLinkStatus === true) {
+    styleLink.setAttribute("href", "https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css");
+    styleLinkStatus = false
+  }
+}	
+navbarDoubleClicker.addEventListener("dblclick", onNavBarDoubleClick)
+
+
